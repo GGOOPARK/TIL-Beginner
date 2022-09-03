@@ -1,0 +1,50 @@
+계산기 실습 도중 에러가 발생해서 찾아보게 된 string 형태의 비교.
+public class Calculator {
+  public static void main(String[] args) {
+    System.out.println("===Java Calculator===");
+
+    Scanner input = new Scanner(System.in);
+    
+    int num1, num2;
+    String calculate;
+    System.out.println("첫번째 숫자를 입력하세요.");
+    num1 = input.nextInt();
+    System.out.println("연산자를 입력하세요.(+, -, *, /)");
+    calculate = input.next();
+    System.out.println("두번째 숫자를 입력하세요.");
+    num2 = input.nextInt();
+    if (calculate.equals("+")){ // 스트링형태비교는 equals로 비교
+      System.out.println (num1 + num2);
+  }
+    else if (calculate.equals("-")) {
+      System.out.println (num1 - num2);
+    }
+
+    else if (calculate.equals("*")) {
+      System.out.println (num1 * num2);
+    }
+    else System.out.println (num1 / num2);
+    }
+}
+
+  수정전 코드
+  if (calculate == +){ // 스트링형태비교는 equals로 비교해야 하는데, ==으로 비교하며 에러가 발생했다. equals로 수정해주니 
+      System.out.println (num1 + num2);
+  }
+    else if (calculate == -) {
+      System.out.println (num1 - num2);
+    }
+
+    else if (calculate == *) {
+      System.out.println (num1 * num2);
+    }
+    else System.out.println (num1 / num2);
+    }
+    
+-string의 연결
+문자열의 연결은 +를 사용한다.
+ex) String A = "good";
+    Stirng B = "afternoon";
+    String C = A+B;
+    System.out.print(C); 결과: good afternoon
+    
